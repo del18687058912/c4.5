@@ -34,3 +34,7 @@
 # Binaries
 Src/c4.5
 Src/c4.5rules
+Src/average
+Src/consult
+Src/consultr
+Src/xval-prep
