@@ -42,7 +42,7 @@ extern Boolean	**CondSatisfiedBy,	/* [Condition][ItemNo] */
 /*************************************************************************/
 
 
-    PruneRule(Cond, NCond, TargetClass)
+void PruneRule(Cond, NCond, TargetClass)
 /*  ---------  */
     Condition Cond[];
     short NCond;

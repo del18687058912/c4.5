@@ -5,6 +5,8 @@
 /*									 */
 /*************************************************************************/
 
+#include <stdlib.h>
+#include <unistd.h>
 
 #include "defns.i"
 #include "types.i"

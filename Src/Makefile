@@ -16,8 +16,10 @@
 #	  * if your C compiler supports higher optimization levels
 #	      CFLAGS = -O3 etc
 
+OLD_CODE = -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast \
+           -Wno-implicit-int -Wno-implicit-function-declaration
 
-CFLAGS = -O2
+CFLAGS = -O2 $(OLD_CODE)
 
 
 #	Definitions of file sets

@@ -5,6 +5,9 @@
 /*									 */
 /*************************************************************************/
 
+#include <stdlib.h>
+#include <string.h>
+
 /*modificado por pmg - 30/4/01*/
 
 #include "defns.i"

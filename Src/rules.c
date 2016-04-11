@@ -5,6 +5,7 @@
 /*								  	 */
 /*************************************************************************/
 
+#include <stdlib.h>
 
 #include "defns.i"
 #include "types.i"
@@ -20,6 +21,7 @@ short	NTests = 0;
 FILE	*fopen();
 extern char	Fn[500];	/* file name */
 
+void PrintCondition(Condition);
 
 /*************************************************************************/
 /*								  	 */
@@ -430,7 +432,7 @@ Boolean SameRule(r, Cond, NConds, TargetClass)
 /*************************************************************************/
 
 
-    PrintCondition(c)
+void PrintCondition(c)
 /*  --------------  */
     Condition c;
 {

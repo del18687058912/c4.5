@@ -16,7 +16,7 @@
 /*************************************************************************/
 
 
-    EvalDiscreteAtt(Att, Fp, Lp, Items)
+void EvalDiscreteAtt(Att, Fp, Lp, Items)
 /*  ---------------  */ 
     Attribute Att;
     ItemNo Fp, Lp; 

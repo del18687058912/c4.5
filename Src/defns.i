@@ -7,6 +7,7 @@
 
 
 #include <stdio.h>
+#include <string.h>
 #include <math.h>
 
 #define	 Eof			EOF             /*char read on end of file*/

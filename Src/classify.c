@@ -10,6 +10,8 @@
 #include "types.i"
 #include "extern.i"
 
+void Classify(Description, Tree, float);
+
 float	*ClassSum=Nil;		/* ClassSum[c] = total weight of class c */
 
 
@@ -61,7 +63,7 @@ ClassNo Category(CaseDesc, DecisionTree)
 /*************************************************************************/
 
 
-    Classify(CaseDesc, T, Weight)
+void Classify(CaseDesc, T, Weight)
 /*  --------  */
     Description CaseDesc; 
     Tree T;

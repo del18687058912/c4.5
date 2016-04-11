@@ -30,7 +30,7 @@ short
 /*************************************************************************/
 
 
-    EvalSubset(Att, Fp, Lp, Items)
+void EvalSubset(Att, Fp, Lp, Items)
 /*  ----------  */ 
     Attribute Att;
     ItemNo Fp, Lp; 

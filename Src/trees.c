@@ -5,11 +5,13 @@
 /*									 */
 /*************************************************************************/
 
+#include <stdlib.h>
 
 #include "defns.i"
 #include "types.i"
 #include "extern.i"
 
+void ShowBranch(short, Tree, DiscrValue);
 
 #define	Tab		"|   "
 #define	TabSize		4
@@ -129,7 +131,7 @@ char	Fn[500];		/* file name */
 /*************************************************************************/
 
 
-    ShowBranch(Sh, T, v)
+void ShowBranch(Sh, T, v)
 /*  -----------  */
     short Sh;
     Tree T;

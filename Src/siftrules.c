@@ -34,7 +34,7 @@ RuleNo	*ClassRules;	/* list of all rules for current target class */
 
 ClassNo	FocusClass;
 
-
+void CoverClass();
 
 /*************************************************************************/
 /*									 */
@@ -161,7 +161,7 @@ ClassNo	FocusClass;
 /*************************************************************************/
 
 
-    CoverClass()
+void CoverClass()
 /*  ----------  */
 {
     RuleNo r, RuleCount=0;

@@ -25,7 +25,7 @@ float
 /*************************************************************************/
 
 
-    EvalContinuousAtt(Att, Fp, Lp)
+void EvalContinuousAtt(Att, Fp, Lp)
 /*  -----------------  */ 
     Attribute Att;
     ItemNo Fp, Lp; 

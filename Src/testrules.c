@@ -5,6 +5,8 @@
 /*									 */
 /*************************************************************************/
 
+#include <stdlib.h>
+
 /*modificado por pmg - 30/4/01*/
 
 
@@ -24,7 +26,7 @@ FILE *predicted_output=0, *fopen();
 /*************************************************************************/
 
 
-    EvaluateRulesets(DeleteRules)
+void EvaluateRulesets(DeleteRules)
 /*  ----------------  */
     Boolean DeleteRules;
 {
