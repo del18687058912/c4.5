@@ -17,7 +17,8 @@
 #	      CFLAGS = -O3 etc
 
 OLD_CODE = -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast \
-           -Wno-implicit-int -Wno-implicit-function-declaration
+           -Wno-implicit-int -Wno-implicit-function-declaration \
+           -Wno-unused-result
 
 CFLAGS = -O2 $(OLD_CODE)
 
@@ -115,8 +116,8 @@ all:
 	make c4.5rules
 	make consult
 	make consultr
-	cc -o xval-prep xval-prep.c
-	cc -o average average.c -lm
+	cc -o xval-prep xval-prep.c $(CFLAGS)
+	cc -o average average.c -lm $(CFLAGS)
 
 
 $(trees): defns.i types.i extern.i

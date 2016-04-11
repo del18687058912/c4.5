@@ -5,6 +5,7 @@
 /*								   	 */
 /*************************************************************************/
 
+#include <stdlib.h>
 
 #include "defns.i"
 #include "types.i"
@@ -206,7 +207,7 @@ float ProbSatisfied(c)
 /*************************************************************************/
 
 
-    InterpretRuleset()
+void InterpretRuleset()
 /*  ---------------- 	 */
 { 
     char Reply;

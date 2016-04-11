@@ -5,6 +5,7 @@
 /*								   	 */
 /*************************************************************************/
 
+#include <stdlib.h>
 
 #include "defns.i"
 #include "types.i"
@@ -71,7 +72,7 @@ float	*LowClassSum,			/* accumulated lower estimates */
 /*************************************************************************/
 
 
-    ClassifyCase(Subtree, Weight)
+void ClassifyCase(Subtree, Weight)
 /*  ------------ 	 */
     Tree Subtree;
     float Weight;
@@ -286,7 +287,7 @@ float Area(t, v)
 /*************************************************************************/
 
 
-    InterpretTree()
+void InterpretTree()
 /*  ------------- 	 */
 { 
     ClassNo c, BestClass;
