@@ -5,13 +5,17 @@
 /*									 */
 /*************************************************************************/
 
+/*modificado por pmg - 30/4/01*/
+
 
 #include "defns.i"
 #include "types.i"
 #include "extern.i"
 #include "rulex.i"
 
-
+/*modificado por pmg - 30/4/01*/
+char Fn[100];
+FILE *predicted_output=0, *fopen();
 
 /*************************************************************************/
 /*									 */
@@ -118,6 +122,14 @@ ItemNo Interpret(Fp, Lp, DeleteRules, CMInfo, Arrow)
     RuleNo p, Bestr, ri, ri2, riDrop=0, BestRuleIndex();
     float ErrorRate, BestRuleConfidence;
 
+    /*modificado por pmg - 30/4/01*/
+    if (!DeleteRules){
+        strcpy(Fn, FileName);
+	    strcat(Fn, ".rules.prediction");
+        predicted_output=fopen(Fn,"w");
+    }
+    /*++++++++++++++++++++++++++++*/
+
     if ( CMInfo )
     {
 	ConfusionMat = (ItemNo *) calloc((MaxClass+1)*(MaxClass+1), sizeof(ItemNo));
@@ -167,6 +179,28 @@ ItemNo Interpret(Fp, Lp, DeleteRules, CMInfo, Arrow)
 	{
 	    AssignedClass = DefaultClass;
 	}
+
+	/*modificado por pmg - 30/4/01*/
+	if (!DeleteRules){
+		ForEach(Att, 0, MaxAtt){
+			if ( SpecialStatus[Att] != IGNORE  )
+				if ( MaxAttVal[Att] ){
+					if ( DVal(Item[i],Att) ){
+						fprintf(predicted_output,"%d\t",DVal(Item[i],Att));
+					}else{
+						printf("-999\t");
+					}
+				} else {
+					if ( CVal(Item[i],Att) != Unknown ){
+						fprintf(predicted_output,"%f\t",CVal(Item[i],Att));
+					} else {
+						printf("-999\t");
+					}
+				}
+		}
+		fprintf(predicted_output,"%d\n",AssignedClass);
+	}
+	/*++++++++++++++++++++++++++++*/
 	
 	if ( CMInfo )
 	{
@@ -249,8 +283,8 @@ ItemNo Interpret(Fp, Lp, DeleteRules, CMInfo, Arrow)
 	}
     }
 
-    cfree(Better);
-    cfree(Worse);
+    free(Better);
+    free(Worse);
 
     if ( riDrop )
     {
@@ -277,8 +311,15 @@ ItemNo Interpret(Fp, Lp, DeleteRules, CMInfo, Arrow)
 	PrintConfusionMatrix(ConfusionMat);
 	free(ConfusionMat);
     }
+    
+    /*modificado por pmg - 30/4/01*/
+    if (!DeleteRules){
+        fclose(predicted_output);
+    }
+    /*++++++++++++++++++++++++++++*/
 
     return Errors;
+
 }
 
 
