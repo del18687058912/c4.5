@@ -88,7 +88,7 @@ void ClassifyCase(Subtree, Weight)
     if ( ! Subtree->NodeType )
     {
 	Verbosity(1)
-	    printf("\tClass %s weight %g cases %g\n", 
+	    printf("\tClass %s weight %g cases %g\n",
 		    ClassName[Subtree->Leaf], Weight, Subtree->Items);
 
 	if ( Subtree->Items > 0 )
@@ -151,7 +151,7 @@ void ClassifyCase(Subtree, Weight)
 
 	case ThreshContin:  /* test of continuous attribute */
 
-	    BranchWeight = 
+	    BranchWeight =
 		RangeDesc[a].UpperBound <= Subtree->Lower ? 1.0 :
 		RangeDesc[a].LowerBound > Subtree->Upper ? 0.0 :
 		RangeDesc[a].LowerBound != RangeDesc[a].UpperBound ?
@@ -289,7 +289,7 @@ float Area(t, v)
 
 void InterpretTree()
 /*  ------------- 	 */
-{ 
+{
     ClassNo c, BestClass;
     float Uncertainty=1.0;
     char Reply;

@@ -176,7 +176,7 @@ Boolean		AllKnown = true;
     Evaluate(false, Best);
 
     if ( UNSEENS )
-    {   
+    {
         GetData(".test");
         printf("\nEvaluation on test data (%d items):\n", MaxItem+1);
         Evaluate(true, Best);

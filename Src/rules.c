@@ -42,7 +42,7 @@ void PrintCondition(Condition);
     strcpy(Fn, FileName);
     strcat(Fn, ".rules");
     if ( ! ( TRf = fopen(Fn, "w") ) ) Error(0, Fn, " for writing");
-    
+
     StreamOut((char *) &NRules, sizeof(RuleNo));
     StreamOut((char *) &DefaultClass, sizeof(ClassNo));
 
@@ -100,7 +100,7 @@ void PrintCondition(Condition);
     strcpy(Fn, FileName);
     strcat(Fn, ".rules");
     if ( ! ( TRf = fopen(Fn, "r") ) ) Error(0, Fn, "");
-    
+
     StreamIn((char *) &nr, sizeof(RuleNo));
     StreamIn((char *) &DefaultClass, sizeof(ClassNo));
 

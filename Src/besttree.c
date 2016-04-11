@@ -431,7 +431,7 @@ Tree Iterate(Window, IncExceptions)
 		}
 	    /*++++++++++++++++++++++++++++*/
 	}
-    
+
 	if ( TRIALS > 1 )
 	{
 	    printf("%4d", t);

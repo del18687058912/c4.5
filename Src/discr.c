@@ -17,11 +17,11 @@
 
 
 void EvalDiscreteAtt(Att, Fp, Lp, Items)
-/*  ---------------  */ 
+/*  ---------------  */
     Attribute Att;
-    ItemNo Fp, Lp; 
+    ItemNo Fp, Lp;
     ItemCount Items;
-{ 
+{
     ItemCount KnownItems;
     float DiscrKnownBaseInfo(), ComputeGain(), TotalInfo();
 
@@ -51,7 +51,7 @@ void EvalDiscreteAtt(Att, Fp, Lp, Items)
     	printf("\tinf %.3f, gain %.3f\n", Info[Att], Gain[Att]);
     }
 
-} 
+}
 
 
 
@@ -68,7 +68,7 @@ void EvalDiscreteAtt(Att, Fp, Lp, Items)
     Attribute Att;
     ItemNo Fp, Lp;
 {
-    Description Case; 
+    Description Case;
     ClassNo c;
     DiscrValue v;
     ItemCount CountItems();
@@ -80,16 +80,16 @@ void EvalDiscreteAtt(Att, Fp, Lp, Items)
 	with each possible value for the given attribute  */
 
     ForEach(p, Fp, Lp)
-    { 
+    {
 	Case = Item[p];
 	Freq[ DVal(Case,Att) ][ Class(Case) ] += Weight[p];
-    } 
+    }
 
     /*  Determine the frequency of each possible value for the
 	given attribute  */
 
-    ForEach(v, 0, MaxAttVal[Att]) 
-    { 
+    ForEach(v, 0, MaxAttVal[Att])
+    {
 	ForEach(c, 0, MaxClass)
 	{
 	    ValFreq[v] += Freq[v][c];
@@ -97,7 +97,7 @@ void EvalDiscreteAtt(Att, Fp, Lp, Items)
     }
 
     /*  Set the rate of unknown values of the attribute  */
- 
+
     UnknownRate[Att] = ValFreq[0] / CountItems(Fp, Lp);
 }
 

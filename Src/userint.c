@@ -54,7 +54,7 @@ void CheckValue(Att, T)
 }
 
 
- 
+
 /*************************************************************************/
 /*									 */
 /*	Print the range of values for attribute Att			 */

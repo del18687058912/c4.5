@@ -203,7 +203,7 @@ ItemNo Interpret(Fp, Lp, DeleteRules, CMInfo, Arrow)
 		fprintf(predicted_output,"%d\n",AssignedClass);
 	}
 	/*++++++++++++++++++++++++++++*/
-	
+
 	if ( CMInfo )
 	{
 	    ConfusionMat[Class(Item[i])*(MaxClass+1)+AssignedClass]++;
@@ -297,7 +297,7 @@ ItemNo Interpret(Fp, Lp, DeleteRules, CMInfo, Arrow)
 	    RuleIndex[ri-1] = RuleIndex[ri];
 	}
 	NRules--;
-    
+
 	if ( CMInfo ) free(ConfusionMat);
 	return Interpret(Fp, Lp, DeleteRules, true, Arrow);
     }
@@ -313,7 +313,7 @@ ItemNo Interpret(Fp, Lp, DeleteRules, CMInfo, Arrow)
 	PrintConfusionMatrix(ConfusionMat);
 	free(ConfusionMat);
     }
-    
+
     /*modificado por pmg - 30/4/01*/
     if (!DeleteRules){
         fclose(predicted_output);

@@ -31,11 +31,11 @@ short
 
 
 void EvalSubset(Att, Fp, Lp, Items)
-/*  ----------  */ 
+/*  ----------  */
     Attribute Att;
-    ItemNo Fp, Lp; 
+    ItemNo Fp, Lp;
     ItemCount Items;
-{ 
+{
     DiscrValue V1, V2, BestV1, BestV2, Barred;
     ItemCount KnownItems;
     ClassNo c;
@@ -289,7 +289,7 @@ void EvalSubset(Att, Fp, Lp, Items)
 	Verbosity(2) printf("\tFinal subsets:");
 	Verbosity(3) PrintDistribution(Att, Blocks, false);
 	Verbosity(2)
-	    printf("\tinf %.3f gain %.3f val %.3f\n", 
+	    printf("\tinf %.3f gain %.3f val %.3f\n",
 		   Info[Att], Gain[Att], Worth(Info[Att], Gain[Att], Epsilon));
     }
 }
@@ -401,7 +401,7 @@ void EvalSubset(Att, Fp, Lp, Items)
 /*  -----------  */
     Tree Node;
     Attribute Att;
-{ 
+{
     ItemCount CountItems();
     short S, Bytes;
 
@@ -410,7 +410,7 @@ void EvalSubset(Att, Fp, Lp, Items)
     Node->NodeType	= BrSubset;
     Node->Tested	= Att;
     Node->Errors	= 0;
-    
+
     Bytes = (MaxAttVal[Att]>>3) + 1;
     Node->Subset = (Set *) calloc(Subsets[Att] + 1, sizeof(Set));
     ForEach(S, 1, Node->Forks)
@@ -418,4 +418,4 @@ void EvalSubset(Att, Fp, Lp, Items)
 	Node->Subset[S] = (Set) malloc(Bytes);
 	CopyBits(Bytes, Subset[Att][S], Node->Subset[S]);
     }
-} 
+}

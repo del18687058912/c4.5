@@ -211,7 +211,7 @@ void CoverClass()
 }
 
 
- 
+
 /*************************************************************************/
 /*									 */
 /*    Try all combinations of rules to find best value			 */
@@ -307,7 +307,7 @@ void CoverClass()
 		{
 		    AddRule(r);
 		}
-		
+
 		Changed = true;
 	    }
 	}
@@ -393,7 +393,7 @@ void CoverClass()
 	    }
 	}
     }
-    
+
     /*  Add or drop rule with greatest reduction in coding cost  */
 
     while ( true )
@@ -932,5 +932,5 @@ float CondBits(C)
 	case BrSubset:		/* subset test on discrete attribute  */
 
 	    return AttTestBits/REDUNDANCY + MaxAttVal[a];
-    } 
+    }
 }

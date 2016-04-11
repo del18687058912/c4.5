@@ -141,7 +141,7 @@ void ShowBranch(Sh, T, v)
     Attribute Att;
     Boolean FirstValue;
     short TextWidth, Skip, Values=0, i;
-    
+
     Att = T->Tested;
 
     switch ( T->NodeType )
@@ -547,13 +547,13 @@ Tree Leaf(ClassFreq, NodeClass, Cases, Errors)
 
     Node->ClassDist = (ItemCount *) calloc(MaxClass+1, sizeof(ItemCount));
     memcpy(Node->ClassDist, ClassFreq, (MaxClass+1) * sizeof(ItemCount));
-    
-    Node->NodeType	= 0; 
+
+    Node->NodeType	= 0;
     Node->Leaf		= NodeClass;
     Node->Items		= Cases;
     Node->Errors	= Errors;
 
-    return Node; 
+    return Node;
 }
 
 
@@ -571,7 +571,7 @@ Tree Leaf(ClassFreq, NodeClass, Cases, Errors)
     DiscrValue Branches;
 {
     Node->Forks = Branches;
-    
+
     Node->Branch = (Tree *) calloc(Branches+1, sizeof(Tree));
 }
 
@@ -583,7 +583,7 @@ Tree Leaf(ClassFreq, NodeClass, Cases, Errors)
 /*									 */
 /*************************************************************************/
 
-	
+
     TreeSize(Node)
 /*  --------  */
     Tree Node;

@@ -397,7 +397,7 @@ Boolean IsSubset(S1, S2, Att)
 
 Boolean Satisfies(CaseDesc, OneCond)
 /*      ---------  */
-    Description CaseDesc; 
+    Description CaseDesc;
     Condition OneCond;
 {
     DiscrValue v;

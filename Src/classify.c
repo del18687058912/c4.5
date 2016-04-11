@@ -23,11 +23,11 @@ float	*ClassSum=Nil;		/* ClassSum[c] = total weight of class c */
 /*************************************************************************/
 
 
-ClassNo Category(CaseDesc, DecisionTree) 
+ClassNo Category(CaseDesc, DecisionTree)
 /*       --------  */
-    Description CaseDesc; 
-    Tree DecisionTree; 
-{ 
+    Description CaseDesc;
+    Tree DecisionTree;
+{
     ClassNo c, BestClass;
 
     if ( ! ClassSum )
@@ -65,7 +65,7 @@ ClassNo Category(CaseDesc, DecisionTree)
 
 void Classify(CaseDesc, T, Weight)
 /*  --------  */
-    Description CaseDesc; 
+    Description CaseDesc;
     Tree T;
     float Weight;
 {
@@ -110,7 +110,7 @@ void Classify(CaseDesc, T, Weight)
 	    {
 		ForEach(v, 1, T->Forks)
 		{
-		    Classify(CaseDesc, T->Branch[v], 
+		    Classify(CaseDesc, T->Branch[v],
 			     (Weight * T->Branch[v]->Items) / T->Items);
 		}
 	    }
@@ -126,7 +126,7 @@ void Classify(CaseDesc, T, Weight)
 	    {
 		ForEach(v, 1, 2)
 		{
-		    Classify(CaseDesc, T->Branch[v], 
+		    Classify(CaseDesc, T->Branch[v],
 			     (Weight * T->Branch[v]->Items) / T->Items);
 		}
 	    }
@@ -160,10 +160,10 @@ void Classify(CaseDesc, T, Weight)
 
 	    ForEach(v, 1, T->Forks)
 	    {
-		Classify(CaseDesc, T->Branch[v], 
+		Classify(CaseDesc, T->Branch[v],
 		         (Weight * T->Branch[v]->Items) / T->Items);
 	    }
 
 	    return;
-    } 
+    }
 }

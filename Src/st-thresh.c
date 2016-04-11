@@ -100,7 +100,7 @@ void ScanTree(T, Fp, Lp)
 	    CaseDesc = Item[i];
 	    CaseClass = Class(CaseDesc);
 	    Val = CVal(CaseDesc, Att);
-		
+
 	    Class1 = Category(CaseDesc, T->Branch[1]);
 	    Class2 = Category(CaseDesc, T->Branch[2]);
 

@@ -19,7 +19,7 @@
 
 long	random();
 #define	randf			((random()&2147483647) / 2147483648.0)
-#define	ForEach(var,F,L)	for(var=F; var<=L; ++var) 
+#define	ForEach(var,F,L)	for(var=F; var<=L; ++var)
 #define	dig(x)			(x >= '0' && x <= '9')
 
 #define MAXLINE 5000		/* maximum line length */
